@@ -1,0 +1,72 @@
+package com.example.testtoparsedata;
+
+import java.util.ArrayList;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
+import android.database.DataSetObserver;
+import android.graphics.Paint.Join;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.Adapter;
+import android.widget.Button;
+import android.widget.ListView;
+
+public class MainActivity extends Activity {
+	private Button mbttn;
+	private ArrayList<UserBean> arr = new ArrayList<UserBean>();
+	private AdapterClass Myadpter;
+	private ListView list;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		mbttn = (Button) findViewById(R.id.button1);
+		list=(ListView)findViewById(R.id.listView1);
+		String st = TestToparse.readXMLinString(
+				"coupon_list_for_customer_json.txt", getApplicationContext());
+
+		try {
+			JSONObject json = new JSONObject(st);
+			JSONObject couponatics = json.getJSONObject("COUPONATICS");
+			JSONObject customer = couponatics.getJSONObject("CUSTOMER");
+			String customer_id = customer.getString("CUSTOMER_ID");
+			String customer_name = customer.getString("CUSTOMER_NAME");
+			JSONObject coupons = customer.getJSONObject("COUPONS");
+			JSONArray coupon = coupons.getJSONArray("COUPON");
+			for (int i = 0; i < coupon.length(); i++) {
+				JSONObject retailer = coupons.getJSONObject("RETAILER");
+				String image = coupon.getJSONObject(i).getString("image")
+						.toString();
+				String COUPON_DESCRIPTION = coupon.getJSONObject(i)
+						.getString("COUPON_DESCRIPTION").toString();
+				String COUPON_CODE = coupon.getJSONObject(i)
+						.getString("COUPON_CODE").toString();
+				String COUPON_START_DATE = coupon.getJSONObject(i)
+						.getString("COUPON_START_DATE").toString();
+				String COUPON_EXPIRY_DATE = coupon.getJSONObject(i)
+						.getString("COUPON_EXPIRY_DATE").toString();
+				String id = retailer.getString("ID");
+				String type = retailer.getString("TYPE");
+				String name = retailer.getString("NAME");
+				arr.add(new UserBean(image, COUPON_DESCRIPTION, COUPON_CODE,
+						COUPON_START_DATE, COUPON_EXPIRY_DATE, id, type, name));
+
+			}
+
+			// UserBean userbean=new UserBean(Imagename, CouponDescription,
+			// CouponCode, Couponstartdate, CouponEnddate, id, type, name)
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		Myadpter=new AdapterClass(getApplicationContext(), R.layout.newrow, arr);
+	}
+
+}

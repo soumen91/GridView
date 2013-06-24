@@ -1,0 +1,77 @@
+package com.example.testtoparsedata;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.List;
+
+import android.content.ContentResolver;
+import android.content.Context;
+import android.util.Log;
+
+public class TestforParse {
+	
+
+		private static final String TAG_NAME = "MUSIC_TESTING_DAO";
+		private static List<Song> songs;
+		private ContentResolver contentResolver;
+		private static Context testingcontext;
+		private File fFile;
+		InputStream inputStream = null;
+
+
+		public TestforParse( Context context) throws IOException{
+		    Log.d(TAG_NAME, "Setting up testing songs");
+		    contentResolver = context.getContentResolver();
+		    testingcontext = context;
+		    getAllSongsFromFile();
+
+		}
+
+		public static void getAllSongsFromFile() throws IOException{
+		    Log.d( TAG_NAME, "Tryign to Get all Songs" );
+		    InputStream is;
+
+		    is = testingcontext.getAssets().open("testing");
+		    Log.d( TAG_NAME, "Did that work?" );
+		    BufferedReader bufferReader = new BufferedReader(new InputStreamReader(is));
+		    String inputLine;
+		    while((inputLine = bufferReader.readLine()) != null){
+		        processLine(inputLine);
+		    }
+		    bufferReader.close();
+
+		}
+
+		private static void logSongs() {
+		    for(Song song : songs)
+		        Log.d( TAG_NAME, song.toString() );
+		}
+
+		public List<Song> getAllSongs() {
+		    return songs;
+		}
+
+		public static void processLine(String aLine) {
+		    Scanner scanner = new Scanner(aLine);
+		    scanner.useDelimiter("=");
+		    if(scanner.hasNext()){
+		        String title = scanner.next();
+		        String artist = scanner.next();
+		        String album = scanner.next();
+		        String id = scanner.next();
+		        String albumId = scanner.next();
+		        String trackOrder = scanner.next();
+		        Log.d(TAG_NAME, "Title = " + title + "Artist = " + artist + "Album = " + album + "ID = " + id + "AlbumID = " + albumId);
+		    }
+		    else {
+		        Log.d(TAG_NAME, "Empty or invalid line. Unable to process");
+		    }
+
+
+		}
+
+		}
+

@@ -1,0 +1,8 @@
+package com.example.Interface;
+
+public interface IRetailer {
+	public interface Presenter{
+		
+	}
+
+}

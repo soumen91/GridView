@@ -1,0 +1,20 @@
+package com.example.testforcustomdiaogue;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.app.Dialog;
+import android.view.Menu;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		final Dialog dialog=new Dialog(getApplicationContext());
+		dialog.setContentView(R.layout.custom);
+	}
+
+	
+
+}

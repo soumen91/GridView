@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/item1"
+        android:title="A">
+        
+        <menu>
+
+    <item
+        android:id="@+id/item11"
+        android:title="A1">
+    </item>
+     <item
+        android:id="@+id/item21"
+        android:title="B1">
+    </item>
+     <item
+        android:id="@+id/item31"
+        android:title="C1">
+    </item>
+
+</menu>
+    </item>
+     <item
+        android:id="@+id/item2"
+        android:title="B">
+    </item>
+     <item
+        android:id="@+id/item3"
+        android:title="C">
+    </item>
+     <item
+        android:id="@+id/item4"
+        android:title="C">
+    </item>
+     <item
+        android:id="@+id/item5"
+        android:title="C">
+    </item>
+     <item
+        android:id="@+id/item6"
+        android:title="C">
+    </item>
+     <item
+        android:id="@+id/item37"
+        android:title="C">
+    </item>
+
+</menu>

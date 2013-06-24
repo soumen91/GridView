@@ -1,0 +1,20 @@
+package com.example.edgeauto;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.EditText;
+
+public class MainActivity extends Activity {
+
+	private EditText ed1;
+	private EditText ed2;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+
+	
+
+}

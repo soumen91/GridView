@@ -1,0 +1,22 @@
+/home/android/workspace/FallingSnow/res/raw/snow.bc \
+  /home/android/workspace/FallingSnow/gen/com/mamlambo/fallingsnow/ScriptC_snow.java \
+  /home/android/workspace/FallingSnow/gen/com/mamlambo/fallingsnow/ScriptField_VpConsts.java \
+  /home/android/workspace/FallingSnow/gen/com/mamlambo/fallingsnow/ScriptField_Snow.java: \
+  /home/android/workspace/FallingSnow/src/com/mamlambo/fallingsnow/snow.rs \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_core.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_types.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/clang-include/stdbool.h \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_allocation.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_atomic.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_cl.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_debug.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_element.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_math.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_matrix.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_object.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_quaternion.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_sampler.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_time.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_graphics.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_mesh.rsh \
+  /opt/android-sdk-linux1/platform-tools/renderscript/include/rs_program.rsh

@@ -1,0 +1,17 @@
+package com.example.Interface;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+
+import com.example.Bean.CouponBean;
+
+public interface IRetailer {
+	public interface Presenter{
+		public ArrayList<CouponBean> getValueFromServer();
+	}
+	
+	public Activity getActivity();
+	public Context getContext();
+
+}

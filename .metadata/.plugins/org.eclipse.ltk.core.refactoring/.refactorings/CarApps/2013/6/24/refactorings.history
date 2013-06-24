@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;CarApps/res/layout/activity_main.xml&apos; to &apos;doc_prof.xml&apos;" description="Rename resource &apos;activity_main.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="res/layout/activity_main.xml" name="doc_prof.xml" stamp="1371209812709" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;CarApps/res/layout/NewFile.xml&apos; to &apos;row.xml&apos;" description="Rename resource &apos;NewFile.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="res/layout/NewFile.xml" name="row.xml" stamp="1371219298294" updateReferences="true"/>
+</session>

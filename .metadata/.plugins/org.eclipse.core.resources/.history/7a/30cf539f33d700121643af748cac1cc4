@@ -1,0 +1,15 @@
+package com.example.practicecarapps;
+
+public class UserBean {
+	public String mName;
+	public String mBttn;
+	public UserBean(String mName,String mBttn){
+		this.mName=mName;
+		this.mBttn=mBttn;
+	}
+	public void setName(){
+		this.mName=mName;
+		this.mBttn=mBttn;
+	}
+
+}

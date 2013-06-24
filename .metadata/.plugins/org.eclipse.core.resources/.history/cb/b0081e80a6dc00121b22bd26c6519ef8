@@ -1,0 +1,17 @@
+package com.example.testtoparsedata;
+
+import java.sql.Date;
+
+import android.R.string;
+
+public class UserBean {
+
+	private string Imagename;
+	private string CouponDescription;
+	private string Couponcode;
+	private Date Couponstartdate;
+	private Date CouponEnddate;
+	
+	
+	
+}

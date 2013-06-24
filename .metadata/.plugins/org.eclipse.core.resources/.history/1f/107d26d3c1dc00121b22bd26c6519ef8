@@ -1,0 +1,12 @@
+package com.example.Interface;
+
+import java.util.ArrayList;
+
+import com.example.Bean.CouponBean;
+
+public interface IRetailer {
+	public interface Presenter{
+		public ArrayList<CouponBean> getValueFromServer();
+	}
+
+}

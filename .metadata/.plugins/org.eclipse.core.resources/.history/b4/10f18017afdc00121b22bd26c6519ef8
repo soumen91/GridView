@@ -1,0 +1,55 @@
+package com.example.testtoparsedata;
+
+import java.sql.Date;
+
+import android.R.string;
+
+public class UserBean {
+
+	private String Imagename;
+	private String CouponDescription;
+	private String CouponCode;
+	private String Couponstartdate;
+	private String CouponEnddate;
+	private String id;
+	private String type;
+	private String name;
+	
+	private String getImagename()
+	{
+		return Imagename;
+	}
+	private String getCouponDescription()
+	{
+		return CouponDescription;
+	}
+	private String getCouponCode()
+	{
+		return CouponCode;
+	}
+	private String getCouponstartdate()
+	{
+		return Couponstartdate;
+	}
+	private String getCouponEnddate()
+	{
+		return CouponEnddate;
+	}
+	private String getid()
+	{
+		return id;
+	}
+	private String gettype()
+	{
+		return type;
+	}
+	private String getname()
+	{
+		return name;
+	}
+	private String setname(){
+		this.Imagename;
+	}
+	
+	
+}

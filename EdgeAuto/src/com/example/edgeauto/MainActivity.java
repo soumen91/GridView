@@ -1,0 +1,61 @@
+package com.example.edgeauto;
+
+import java.net.URL;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.net.Uri;
+import android.os.Bundle;
+import android.app.Activity;
+import android.util.Log;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+	protected static final String String = null;
+	private EditText ed1;
+	public String url;
+	private EditText ed2;
+	private Button bttnSubmit;
+	public JSONObject jObj;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		ed1 = (EditText) findViewById(R.id.edtxt1);
+		ed2 = (EditText) findViewById(R.id.edtxt2);
+		bttnSubmit = (Button) findViewById(R.id.bttnSmbt);
+		bttnSubmit.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				String uName = ed1.getText().toString().trim();
+				String psw = ed2.getText().toString().trim();
+				jObj = new JSONObject();
+				try {
+					jObj.put("username", uName);
+					jObj.put("password", psw);
+					JSONObject mj = HttpClient.SendHttpPost(
+							"http://106.187.95.65/login.php", jObj);
+					String lnma = mj.getString("lastname");
+					String Fname = mj.getString("firstname");
+					Log.e("A", Fname);
+					Toast.makeText(getApplicationContext(), Fname, 5000).show();
+				} catch (JSONException e) {
+
+					e.printStackTrace();
+				}
+
+			}
+		});
+	}
+
+}

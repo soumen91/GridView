@@ -1,0 +1,7 @@
+package com.example.practicecarapps;
+
+public class UserBean {
+	public String mName;
+	public String mBttn;
+
+}

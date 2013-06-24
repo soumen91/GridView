@@ -1,0 +1,35 @@
+package com.example.carappspractice;
+
+import java.util.ArrayList;
+
+import android.R;
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.Button;
+import android.widget.ListView;
+
+public class MainActivity extends Activity {
+
+	private ArrayList<UserBean> arr = new ArrayList<UserBean>();
+	private MyAdapter adp;
+	private ListView list;
+
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		list = (ListView) findViewById(R.id.lstView);
+		UserBean a1 = new UserBean("Soumen", "like");
+		UserBean b1 = new UserBean("Ravi", "like");
+		UserBean c1 = new UserBean("Utpal", "like");
+		UserBean d1 = new UserBean("Piyali", "like");
+		UserBean e1 = new UserBean("Abhisekh", "like");
+		arr.add(a1);
+		arr.add(b1);
+		arr.add(c1);
+		arr.add(d1);
+		arr.add(e1);
+		mrow = new Row(getApplicationContext(), R.layout.Row, arr);
+	}
+
+}

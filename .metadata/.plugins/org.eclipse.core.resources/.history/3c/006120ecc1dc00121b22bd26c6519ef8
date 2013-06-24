@@ -1,0 +1,13 @@
+package com.example.Presenter;
+
+import com.example.Interface.IRetailer;
+import com.example.view.RetailerView;
+
+public class RetailerPresenter implements IRetailer.Presenter{
+	private RetailerView mRetailerView;
+	
+	public RetailerPresenter(RetailerView mRetailerView){
+		this.mRetailerView = mRetailerView;
+	}
+
+}

@@ -1,0 +1,89 @@
+package com.example.testtoparsedata;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+
+import android.content.Context;
+import android.graphics.Color;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+public class AdapterClass  extends ArrayAdapter<UserBean>{
+	private Context mCtx;
+	private ArrayList<UserBean> mItems = new ArrayList<UserBean>();
+	private ViewHolder mHolder;
+	
+	
+
+	public AdapterClass(Context context, int textViewResourceId,	ArrayList<UserBean> items) {
+		super(context, textViewResourceId, items);
+		this.mCtx = context;
+		this.mItems = items;
+		
+	
+	}		  
+
+	@Override
+	public int getCount() {
+		return mItems.size();
+	}
+
+	@Override
+	public long getItemId(int position) {
+		return 0;
+	}
+
+
+	@Override
+	public View getView( final int position,  View convertView, ViewGroup parent) {
+		View v = convertView;
+		if (v == null) {
+			LayoutInflater vi = (LayoutInflater) mCtx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			v = vi.inflate(R.layout.newrow, null);
+
+			mHolder = new ViewHolder();
+			v.setTag(mHolder);
+			
+			mHolder.Imagename = (ImageView)v.findViewById(R.id.img1);
+			mHolder.mAddress = (TextView)v.findViewById(R.id.);
+			mHolder.mMain = (LinearLayout)v.findViewById(R.id.linear1);
+			if(position % 2 == 1){
+				mHolder.mMain.setBackgroundColor(Color.WHITE);
+				
+			}
+			else
+			{
+				mHolder.mMain.setBackgroundColor(Color.LTGRAY);
+				
+			}
+		}
+		else {
+			mHolder =  (ViewHolder) v.getTag();
+		}			
+		
+		final UserBean mRoomLightBean = mItems.get(position);
+		
+		if(mRoomLightBean != null){
+			mHolder.mName.setText(mRoomLightBean.getName());
+			mHolder.mAddress.setText(mRoomLightBean.getAddress());
+			
+		}		
+		return v;
+	}
+
+	
+
+	class ViewHolder {
+	
+		public ImageView Imagename;
+		public TextView mAddress;
+		public LinearLayout mMain;
+		
+	}
+	

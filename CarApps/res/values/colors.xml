@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+	<color name="white">#ffffffff</color>
+	<color name="red">#ffee0000</color>
+	<color name="ltgrey">#ffe0e0e0</color>
+	<color name="black">#000000</color>
+	<color name="blue">#0000FF</color>
+	<color name="picasso_blue">#0276FD</color>
+	<color name="blue_spider">#26466D</color>
+	<color name="list_view_header_grey">#6E6E6E</color>
+</resources>

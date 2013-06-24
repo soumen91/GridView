@@ -1,0 +1,8 @@
+package com.example.testpractice;
+
+import android.widget.Button;
+
+public class secondActivity {
+	public Button mbtnn;
+
+}
